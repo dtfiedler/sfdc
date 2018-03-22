@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ionic App</title>
+  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4e8ef7">
+
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- cordova.js required for cordova apps (remove if not needed) -->
+  <script src="cordova.js"></script>
+    
+  <link href="build/main.css" rel="stylesheet">
+
+</head>
+<body>
+  
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app>
+
+  </ion-app>
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
+
+  <!-- The vendor js is generated during the build process
+       It contains all of the dependencies in node_modules -->
+  <script src="build/vendor.js"></script>
+
+  <!-- The main bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+  <style type='text/css'>
+    .embeddedServiceHelpButton .helpButton .uiButton { background-color: #005290; font-family: "Salesforce Sans", sans-serif; }
+    .embeddedServiceHelpButton .helpButton .uiButton:focus { outline: 1px solid #005290; }
+    @font-face {
+    font-family: 'Salesforce Sans';
+    src: url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/SalesforceSans/SalesforceSans-Regular.woff') format('woff'),
+    url('https://www.sfdcstatic.com/system/shared/common/assets/fonts/SalesforceSans/SalesforceSans-Regular.ttf') format('truetype');
+    }
+  </style>
+  
+  <script type='text/javascript' src='https://service.force.com/embeddedservice/4.1/esw.min.js'></script>
+  <script type='text/javascript'>
+  var initESW = function(gslbBaseURL) {
+  embedded_svc.settings.displayHelpButton = true; //Or false
+  embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+  
+  //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+  //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+  
+  //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+  //embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+  
+  // Settings for Live Agent
+  embedded_svc.settings.avatarImgURL = '';
+  embedded_svc.settings.prechatBackgroundImgURL = '';
+  embedded_svc.settings.waitingStateBackgroundImgURL = '';
+  embedded_svc.settings.smallCompanyLogoImgURL = '';
+  //embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+  // Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+  //Returns a valid button ID.
+  //};
+  
+  embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+  embedded_svc.settings.entryFeature = 'LiveAgent';
+  //embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+  
+  embedded_svc.init('https://brave-raccoon-434365-dev-ed.my.salesforce.com', 'https://dst-chat-developer-edition.na50.force.com/', gslbBaseURL, '00D6A0000037GVI', 'SFDC_Live_Chat_Snap_In', { baseLiveAgentContentURL: 'https://c.la1-c1-iad.salesforceliveagent.com/content', deploymentId: '5726A000000HvNh', buttonId: '5736A000000Hfic', baseLiveAgentURL: 'https://d.la1-c1-iad.salesforceliveagent.com/chat', eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04I6A000000fzuTUAQ_1624f13561b'}); };if (!window.embedded_svc) { var s = document.createElement('script'); s.setAttribute('src', 'https://brave-raccoon-434365-dev-ed.my.salesforce.com/embeddedservice/4.1/esw.min.js'); s.onload = function() { initESW(null); }; document.body.appendChild(s); } else { initESW('https://service.force.com'); }</script>
+</body>
+</html>

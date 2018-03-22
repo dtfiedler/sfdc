@@ -1,0 +1,23 @@
+{
+  "name": "predix-ui",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "px-colors-design": "^1.0.8",
+    "px-forms-design": "^2.1.2",
+    "px-theme": "^3.5.3"
+  },
+  "devDependencies": {
+    "px-buttons-design": "^2.0.8",
+    "px-list-ui-design": "^2.0.3"
+  }
+}
